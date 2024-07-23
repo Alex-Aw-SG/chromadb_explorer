@@ -10,7 +10,7 @@ Features of this app
 
 Setup
 ------------------------
-1. Download the files @ 
+1. Download the files @ https://github.com/Alex-Aw-SG/chromadb_explorer
 2. pip install -r requirements.txt
 3. streamlit run explorer.py
 
