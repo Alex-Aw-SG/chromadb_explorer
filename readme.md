@@ -14,6 +14,6 @@ Setup
 2. pip install -r requirements.txt
 3. streamlit run explorer.py
 
-
+![Screencap](https://github.com/Alex-Aw-SG/chromadb_explorer/blob/master/screencap.png?raw=true)
 
 
