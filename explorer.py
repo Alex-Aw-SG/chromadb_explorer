@@ -115,7 +115,17 @@ if 'collections' in st.session_state and st.session_state['collections']:
 
         # Button to delete collection
         if st.button('Delete Collection'):
-            # Confirmation before deletion
+            st.session_state['delete_confirmation'] = True
+
+        # Confirmation before deletion
+        if st.session_state.get('delete_confirmation', False):
             if st.button('Confirm Deletion'):
                 client.delete_collection(collection_name)
                 st.write(f"Collection '{collection_name}' has been deleted.")
+                # Reset delete confirmation
+                st.session_state['delete_confirmation'] = False
+                # Refresh collections
+                collections = list_collections(client)
+                st.session_state['collections'] = {coll.name: coll.id for coll in collections}
+            elif st.button('Cancel'):
+                st.session_state['delete_confirmation'] = False
